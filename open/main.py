@@ -1,12 +1,11 @@
 import os.path
 from pprint import pprint
 
-try:
-    path = os.path.join(os.getcwd(), "open", "recipes.txt")
-except:
-    print("Файла нет!")
 
-with open(path) as file:
+path = os.path.join(os.getcwd(), "open", "recipes.txt")
+
+
+with open(path, encoding="UTF-8") as file:
     cook_book = {}
     for dish in file:
         dish_name = dish.strip()

@@ -1,11 +1,10 @@
 import os
-import operator
-from pprint import pprint
+
 
 files = os.listdir(os.path.join(os.getcwd(), "files"))
 file_info = {}
 for file in files:
-    with open(os.path.join(os.getcwd(), "files", file)) as file_open:
+    with open(os.path.join(os.getcwd(), "files", file), encoding="UTF-8") as file_open:
         count = 0
         text = []
         for line in file_open:
@@ -14,9 +13,7 @@ for file in files:
     file_info[file] = [count, text]
 
 sorted_file_info = sorted(file_info.items(), key=lambda x : x[1])
-# pprint(sorted_file_info)
 
-# print(sorted_file_info[2][1][1][0])
 
 with open("write_file.txt", "w+") as file:
     for wr_f in sorted_file_info:
