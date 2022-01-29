@@ -11,7 +11,7 @@ def open_f(path):
         file_info[file] = [count, '\n'.join([s for s in text])]
 
 #
-def sort(file):
+def sort_f(file):
     sorted_file_info = sorted(list(file.items()), key=lambda x: x[1])
     return sorted_file_info
 
@@ -25,6 +25,6 @@ if __name__ == '__main__':
     files = os.listdir(path)
     file_info = {}
     open_f(path)
-    write_f(sort(file_info))
+    write_f(sort_f(file_info))
 
 
